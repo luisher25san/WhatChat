@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.chat-container {
+    min-width: 250px;
+    width: 50%;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.message {
+    margin: 5px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    max-width: 70%;
+}
+
+.bot {
+    align-self: flex-start;
+    background-color: #dcdcdc;
+    max-width: 44%;
+}
+
+.user {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: #fff;
+    align-self: flex-end; /* Alinea el mensaje del usuario al final del cuadro de chat */
+    margin-top: auto; /* Empuja el mensaje del usuario hacia abajo para que aparezca desde el final */
+    max-width: 44%;
+    max-height: auto;
+}
+.input-container {
+    display: flex;
+    padding: 10px;
+}
+
+.message-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.send-button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+    background-color: #003b79;
+}
+
+.voice-button{
+    font-size: 30px;
+    border-radius: 100%;
+    border: 1px solid rgb(255, 255, 255);
+    padding-left: 2px;
+    background-color: white;
+    padding-bottom: 10px;
+}
+
+.voice-button:hover{
+    background-color: rgb(221, 221, 221);
+}
+
+.message {
+    display: flex;
+    align-items: center; /* Alinea los elementos verticalmente */
+    margin: 5px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    max-width: 70%;
+}
+
+.bot {
+    background-color: #dcdcdc;
+}
+
+.avatar {
+    width: 30px; /* Ajusta el tamaño de la imagen del avatar */
+    height: 30px;
+    margin-right: 10px; /* Añade un margen entre la imagen y el texto */
+    border-radius: 100%; /* Para que la imagen sea circular */
+}

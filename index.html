@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatBot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icons8-chatbot-100.png" type="image/png">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+            <div class="message bot">
+                <img src="icons8-chatbot-100.png" alt="Robot" class="avatar">
+                     Soy WhatBot.<br>
+                ¿Como puedo ayudarte?
+            </div>
+        </div>
+        <div class="input-container">
+            <input type="text" id="user-input" class="message-input" placeholder="Type a message..." autocomplete="off">
+            <button id="send-button" class="send-button">Send</button>
+            <button id="voice-button" class="voice-button">🎙️</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("send-button").addEventListener("click", function() {
+            sendMessage();
+        });
+
+        // Verificar si el navegador soporta reconocimiento de voz
+        if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const recognition = new SpeechRecognition();
+
+            // Configurar reconocimiento de voz
+            recognition.lang = 'es-ES'; // Establecer idioma español
+
+            // Escuchar cuando se detecta un resultado de voz
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                appendMessage("user", transcript);
+                getBotResponse(transcript);
+            };
+
+            // Manejar errores
+            recognition.onerror = function(event) {
+                console.error('Error en el reconocimiento de voz:', event.error);
+            };
+
+            // Agregar evento de clic al botón de voz
+            document.getElementById("voice-button").addEventListener("click", function() {
+                recognition.start();
+            });
+        } else {
+            console.error('El reconocimiento de voz no está soportado en este navegador.');
+        }
+    </script>
+</body>
+</html>
