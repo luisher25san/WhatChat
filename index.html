@@ -22,7 +22,14 @@
             <button id="voice-button" class="voice-button">🎙️</button>
         </div>
     </div>
-
+    <div class="container">
+        <button id="colorBtn">Cambiar Color</button>
+        <input type="color" id="colorPicker" style="display: none;">
+      </div>
+      <div class="button-container">
+        <button class="amen-btn" onclick="cambiarTamañoLetra(2)">Aumentar Tamaño</button>
+        <button class="dism-btn" onclick="cambiarTamañoLetra(-2)">Disminuir Tamaño</button>
+      </div>      
     <script src="script.js"></script>
     <script>
         document.getElementById("send-button").addEventListener("click", function() {
