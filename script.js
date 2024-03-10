@@ -663,7 +663,7 @@ function getBotResponse(userInput) {
     } else if (userInput.toLowerCase().includes("insúltame") || userInput.toLowerCase().includes("insultos")){
         var randmoInsIndex = Math.floor(Math.random()*insultos.length);
         botResponse = insultos[randmoInsIndex];
-    } if (userInput.toLowerCase().includes("selfie") || userInput.toLowerCase().includes("foto") || userInput.toLowerCase().includes("fotos") || userInput.toLowerCase().includes("picture") || userInput.toLowerCase().includes("pictures") || userInput.toLowerCase().includes("selfies")) {
+    } else if (userInput.toLowerCase().includes("selfie") || userInput.toLowerCase().includes("foto") || userInput.toLowerCase().includes("fotos") || userInput.toLowerCase().includes("picture") || userInput.toLowerCase().includes("pictures") || userInput.toLowerCase().includes("selfies")) {
         // Si el usuario menciona alguna palabra relacionada con fotos, abre la cámara
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             navigator.mediaDevices.getUserMedia({ video: true })
