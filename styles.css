@@ -114,21 +114,21 @@ body {
 }
 
 /* Estilos para pantallas de 365 a 700 píxeles de ancho */
-@media only screen and (min-width: 365px) and (max-width: 700px) {
+@media only screen and (min-width: 335px) and (max-width: 700px) {
     body {
         font-size: 10px; /* Reducir aún más el tamaño de la fuente */
     }
     .chat-container {
-        width: 340px /* Reducir el ancho del contenedor de chat al 40% */
+        width: 350px /* Reducir el ancho del contenedor de chat al 40% */
     }
     .message {
-        max-width: 30%; /* Reducir el ancho máximo de los mensajes al 60% */
+        max-width: 40%; /* Reducir el ancho máximo de los mensajes al 60% */
     }
     .avatar {
         left: -20px; /* Ajustar la posición del avatar */
     }
     .message-input {
-        max-width: 40%; /* Reducir el ancho máximo del input de mensaje al 60% */
+        max-width: 60%; /* Reducir el ancho máximo del input de mensaje al 60% */
     }
     .send-button,
     .voice-button {
