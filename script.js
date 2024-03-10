@@ -663,6 +663,44 @@ function getBotResponse(userInput) {
     } else if (userInput.toLowerCase().includes("insúltame") || userInput.toLowerCase().includes("insultos")){
         var randmoInsIndex = Math.floor(Math.random()*insultos.length);
         botResponse = insultos[randmoInsIndex];
+    } if (userInput.toLowerCase().includes("selfie") || userInput.toLowerCase().includes("foto") || userInput.toLowerCase().includes("fotos") || userInput.toLowerCase().includes("picture") || userInput.toLowerCase().includes("pictures") || userInput.toLowerCase().includes("selfies")) {
+        // Si el usuario menciona alguna palabra relacionada con fotos, abre la cámara
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function(stream) {
+                    var video = document.createElement('video');
+                    video.srcObject = stream;
+                    video.setAttribute('autoplay', '');
+                    video.setAttribute('muted', '');
+                    video.setAttribute('playsinline', '');
+                    chatContent.appendChild(video);
+
+                    // Añadir un botón para tomar la captura de pantalla
+                    var captureButton = document.createElement('button');
+                    captureButton.textContent = "Tomar Foto";
+                    captureButton.addEventListener('click', function() {
+                        var canvas = document.createElement('canvas');
+                        var context = canvas.getContext('2d');
+                        canvas.width = video.videoWidth;
+                        canvas.height = video.videoHeight;
+                        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                        var imgData = canvas.toDataURL('image/png');
+                        appendMessage("bot", '<img src="' + imgData + '">');
+                        stream.getTracks().forEach(track => track.stop()); // Detener la reproducción del video
+                        chatContent.removeChild(video); // Eliminar el elemento de video
+                        chatContent.removeChild(captureButton); // Eliminar el botón de captura
+                    });
+                    chatContent.appendChild(captureButton);
+                })
+                .catch(function(error) {
+                    console.error('Error al acceder a la cámara:', error);
+                    botResponse = "Lo siento, no pude acceder a la cámara.";
+                    appendMessage("bot", botResponse);
+                });
+        } else {
+            botResponse = "Tu navegador no soporta la funcionalidad de la cámara.";
+            appendMessage("bot", botResponse);
+        }
     }
     else {
         botResponse = randomResponses[randomIndex];
@@ -718,6 +756,33 @@ if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
     console.error('El reconocimiento de voz no está soportado en este navegador.');
 }
 
+document.getElementById('colorBtn').addEventListener('click', function() {
+    var colorPicker = document.getElementById('colorPicker');
+    if (window.getComputedStyle(colorPicker).display === 'none') {
+      colorPicker.style.display = 'flex';
+    } else {
+      colorPicker.style.display = 'none';
+    }
+  });
+  
+  document.getElementById('colorPicker').addEventListener('input', function() {
+    var color = this.value;
+    
+    // Cambiar el color del botón de enviar
+    var sendButton = document.querySelector('.send-button');
+    sendButton.style.backgroundColor = color;
+  });
+  
+  document.getElementById('colorPicker').addEventListener('input', function() {
+    var color = this.value;
+    document.body.style.backgroundColor = color;
+  });
 
 
-
+  function cambiarTamañoLetra(cambio) {
+    const elemento = document.querySelector(".contenido");
+    const tamanioActual = parseInt(getComputedStyle(elemento).fontSize);
+    const nuevoTamanio = tamanioActual + cambio + "px";
+    elemento.style.fontSize = nuevoTamanio;
+  }
+  

@@ -11,7 +11,7 @@ body {
     margin: 50px auto;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
     overflow: hidden;
 }
 .chat-box {
@@ -33,14 +33,15 @@ body {
 
 .bot {
     align-self: flex-start;
-    background-color: #dcdcdc;
+    background-color: #ababab;
     max-width: 44%;
 }
 
 .user {
     align-self: flex-end;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #000000;
+    border: 2px solid #000000 ;
+    color: #ffffff;
     align-self: flex-end; /* Alinea el mensaje del usuario al final del cuadro de chat */
     margin-top: auto; /* Empuja el mensaje del usuario hacia abajo para que aparezca desde el final */
     max-width: 44%;
@@ -63,14 +64,14 @@ body {
     padding: 8px 20px;
     border: none;
     border-radius: 20px;
-    background-color: #007bff;
+    background-color: #000000;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .send-button:hover {
-    background-color: #003b79;
+    background-color: #1e1e1e;
 }
 
 .voice-button{
@@ -106,6 +107,12 @@ body {
     border-radius: 100%; /* Para que la imagen sea circular */
 }
 
+#chat-log {
+    height: 300px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
 /* Estilos para pantallas de 365 a 700 píxeles de ancho */
 @media only screen and (min-width: 365px) and (max-width: 700px) {
     body {
@@ -128,3 +135,44 @@ body {
         padding: 3px 8px; /* Reducir aún más el padding de los botones */
     }
 }
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  #colorBtn {
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  #colorPicker {
+    margin-top: 20px;
+    align-items: center;
+    align-self: center;
+    align-self: center;
+    margin: 0 auto; /* Esto centrará el color picker horizontalmente */
+    border: none;
+    margin-bottom: 20px;
+  }
+  
+
+  .amen-btn, .dism-btn {
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  
+  .button-container {
+    text-align: center;
+  }
