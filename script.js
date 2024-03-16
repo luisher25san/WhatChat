@@ -785,4 +785,28 @@ document.getElementById('colorBtn').addEventListener('click', function() {
     const nuevoTamanio = tamanioActual + cambio + "px";
     elemento.style.fontSize = nuevoTamanio;
   }
+ 
   
+
+  const fontSelect = document.getElementById("font-select");
+  const botFont =  document.querySelector(".chat-box");
+
+  function getFontList() {
+    const fontFamilies = ["Arial", "Helvetica", "Times New Roman", "Georgia", "Courier New", "Verdana", "Impact", "Tahoma", "Trebuchet MS", "Comic Sans MS", "Palatino Linotype", "Lucida Console", "Calibri", "Open Sans", "Roboto", "Lato", "Source Sans Pro"];
+    return fontFamilies;
+  }
+  
+  // Añadir las opciones de fuentes al selector
+  const fontList = getFontList();
+  fontList.forEach(fontFamily => {
+    const option = document.createElement("option");
+    option.value = fontFamily;
+    option.text = fontFamily;
+    fontSelect.appendChild(option);
+  });
+  
+  // Cambiar la fuente al seleccionar una opción
+  fontSelect.addEventListener("change", () => {
+    const selectedFont = fontSelect.value;
+    botFont.style.fontFamily = selectedFont;
+  });
