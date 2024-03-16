@@ -5,10 +5,30 @@ body {
     background-color: #f5f5f5;
 }
 
+html {
+font: optional;
+}
+
+.font-selector {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.label1 {
+    background-color: #000000;
+    color: white;
+    width: 160px;
+    margin-right: 10px; /* Espacio entre el label y el select */
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-radius: 5px;
+}
+
 .chat-container {
     min-width: 250px;
     width: 50%;
-    margin: 50px auto;
+    margin: 20px auto;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
@@ -134,6 +154,17 @@ body {
     .voice-button {
         padding: 3px 8px; /* Reducir aún más el padding de los botones */
     }
+    .logo-1 img{
+        width: 250px;
+        height: auto;
+    }
+    .logo-1 .second-img{
+            padding-top: 30px;
+            padding-bottom: 10px;
+            padding-left: 2px;
+            margin-left: 20px; /* Espacio entre las imágenes */
+            width: 55px;
+    }
 }
 
 .container {
@@ -173,6 +204,56 @@ body {
     margin-bottom: 15px;
   }
   
+  #showFontSelectBtn {
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+
   .button-container {
     text-align: center;
   }
+.logo-1{
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+  .logo{
+    padding-top: 30px;
+    padding-bottom: 10px;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    width: 350px;
+    height: auto;
+  }
+
+  #font-select {
+    color: white;
+    background-color: black;
+}
+  .second-img {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 1px;
+    margin-left: 20px; /* Espacio entre las imágenes */
+    width: 85px;
+}
+
+.font-selector-container {
+    text-align: center; /* Centra horizontalmente los elementos dentro del contenedor */
+}
+
+.font-selector {
+    color: black;
+    text-align: center; /* Centra horizontalmente los elementos dentro del contenedor */
+    margin-bottom: 20px;
+}

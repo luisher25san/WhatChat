@@ -8,6 +8,10 @@
     <link rel="icon" href="icons8-chatbot-100.png" type="image/png">
 </head>
 <body>
+    <div class="logo-1">
+        <img class="logo" src="WhatBot.png">
+        <img src="chatbotlogo.png" alt="Descripción de la segunda imagen" class="second-img">
+    </div>
     <div class="chat-container">
         <div class="chat-box" id="chat-box">
             <div class="message bot">
@@ -26,10 +30,17 @@
         <button id="colorBtn">Cambiar Color</button>
         <input type="color" id="colorPicker" style="display: none;">
       </div>
+    
       <div class="button-container">
         <button class="amen-btn" onclick="cambiarTamañoLetra(2)">Aumentar Tamaño</button>
         <button class="dism-btn" onclick="cambiarTamañoLetra(-2)">Disminuir Tamaño</button>
-      </div>      
+      </div>  
+      <div class="font-selector">
+        <div class="label1">
+            <label for="font-select">Selecciona la fuente:</label>
+        </div>
+        <select id="font-select"></select>
+    </div>
     <script src="script.js"></script>
     <script>
         document.getElementById("send-button").addEventListener("click", function() {
